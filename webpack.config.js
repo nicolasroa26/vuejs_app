@@ -75,4 +75,4 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
-}
+}.listen(process.env.PORT || 5000)
