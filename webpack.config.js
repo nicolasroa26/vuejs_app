@@ -55,7 +55,7 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
-}.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+}
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
