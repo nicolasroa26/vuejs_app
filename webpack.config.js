@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var PORT = process.env.PORT || 5000
+var PORT = process.env.PORT || 8080
 
 module.exports = {
   entry: './src/main.js',
@@ -48,6 +48,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    port: PORT,
     noInfo: true,
     overlay: true
   },
