@@ -50,8 +50,8 @@ module.exports = {
     historyApiFallback: true,
     host: '0.0.0.0',
     port: PORT,
-    noInfo: false,
-    overlay: true
+    noInfo: true,
+    overlay: false
   },
   performance: {
     hints: false
