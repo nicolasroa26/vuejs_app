@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var PORT = process.env.PORT || 8080
+var PORT = process.env.PORT || 3000
 
 module.exports = {
   entry: './src/main.js',
