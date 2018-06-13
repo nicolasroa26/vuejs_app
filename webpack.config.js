@@ -1,7 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-const host = '0.0.0.0';
-const port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000
 
 module.exports = {
   entry: './src/main.js',
@@ -56,7 +55,7 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
-}
+}.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
