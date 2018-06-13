@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 
 module.exports = {
   entry: './src/main.js',
@@ -75,4 +77,4 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
-}.listen(process.env.PORT || 5000)
+}
