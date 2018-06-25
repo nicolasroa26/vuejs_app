@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <form action="/" method="post">
+    <form action="/">
       <p>Tu post: <input type="text" id= "post" name="post" value=""/></p>
       <p>Tus tokens: <input type="text" id="token" name="token" value=""/></p>
       <p>ID de grupos: <input type="text" id="grupos" name="grupos" value=""/></p>
