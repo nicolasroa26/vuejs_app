@@ -19,27 +19,14 @@ export default {
   },
   methods: {
     axios() {
-      console.log("prueba")
       let resultEl = document.getElementById("getResult")
       resultEl.innerHTML = ""
       this.$http.get('https://young-brushlands-86101.herokuapp.com/publications')
         .then(response => {
-          console.log("hi")
+          resultEl.innerHTML
         })
         .catch(error => {
-          console.log("ho")
-        })
-    },
-    getRequest() {
-      let resulEl = document.getElementById("getResult")
-      resulEl.innerHTML = ''
-      // We use Axios to perform a GET request with params
-      this.$http.get('https://young-brushlands-86101.herokuapp.com/publications')
-        .then(response => {
-          console.log("he")
-        })
-        .catch(error => {
-          console.log("ha")
+          resultEl.innerHTML
         })
     },
   }
