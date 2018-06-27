@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 8080
 
 module.exports = {
   entry: './src/main.js',
@@ -81,4 +81,3 @@ if (process.env.NODE_ENV === 'production') {
     })
   ])
 }
-console.log(PORT)

@@ -1,52 +1,49 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <form action="/">
-      <p>Tu post: <input type="text" id= "post" name="post" value=""/></p>
-      <p>Tus tokens: <input type="text" id="token" name="token" value=""/></p>
-      <p>ID de grupos: <input type="text" id="grupos" name="grupos" value=""/></p>
-      <input type="submit" value="Enviar" />
-    </form>
-    <router-view/>
+      <p>Tu post: <input type="text" id= "post" value=""/></p>
+      <p>Tus tokens: <input type="text" id="token" value=""/></p>
+      <p>ID de grupos: <input type="text" id="grupos" value=""/></p>
+      <button class="btn btn-primary" @click="axios">Enviar</button>
+    <div class="panel-body" id="getResult"></div>
   </div> 
 </template>
 
 <script>
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
-      msg: 'Web Form'
+      msg: "Form Web"
     }
+  },
+  methods: {
+    axios() {
+      console.log("prueba")
+      let resultEl = document.getElementById("getResult")
+      resultEl.innerHTML = ""
+      this.$http.get('https://young-brushlands-86101.herokuapp.com/publications')
+        .then(response => {
+          console.log("hi")
+        })
+        .catch(error => {
+          console.log("ho")
+        })
+    },
+    getRequest() {
+      let resulEl = document.getElementById("getResult")
+      resulEl.innerHTML = ''
+      // We use Axios to perform a GET request with params
+      this.$http.get('https://young-brushlands-86101.herokuapp.com/publications')
+        .then(response => {
+          console.log("he")
+        })
+        .catch(error => {
+          console.log("ha")
+        })
+    },
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #008000;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
+<style></style>
